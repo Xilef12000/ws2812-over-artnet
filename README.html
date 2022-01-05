@@ -983,28 +983,123 @@ body .markdown-body {
 <a id="user-content-ws2812-over-artnet" class="anchor" href="#ws2812-over-artnet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ws2812-over-artnet</h1>
 <h2>
 <a id="user-content-ws2812-over-artnet-with-a-raspberrypi" class="anchor" href="#ws2812-over-artnet-with-a-raspberrypi" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ws2812 over artnet with a raspberrypi</h2>
-<p>open</p>
+<h2>
+<a id="user-content-setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup:</h2>
+<ol start="0">
+<li>
+<p><strong>?????</strong></p>
+</li>
+<li>
+<p>Connect the ws2812-Strip to the raspberry pi.<br>
+<strong>??????</strong></p>
+</li>
+<li>
+<p>This is an optional step to improve the communication with the ws2812 LED-Strip<br>
+(This step is not necessary, and can also be done later)</p>
+<ol>
+<li>open the file:
 <div class="highlight highlight-source-shell"><pre>sudo nano /etc/modprobe.d/snd-blacklist.conf</pre></div>
-<p>and add</p>
+</li>
+<li>and add:
 <pre><code>blacklist snd_bcm2835
 </code></pre>
-<p>open</p>
+save and exit with Strg + O and Strg + X</li>
+<li>open the next file:
 <div class="highlight highlight-source-shell"><pre>sudo nano /boot/config.txt</pre></div>
-<p>and change</p>
+</li>
+<li>and change:
 <pre><code># Enable audio (loads snd_bcm2835)
 dtparam=audio=on
 </code></pre>
-<p>to</p>
+to:
 <pre><code># Enable audio (loads snd_bcm2835)
 #dtparam=audio=on
 </code></pre>
-<p>reboot using</p>
+save and exit with Strg + O and Strg + X</li>
+<li>reboot the Raspberry pi using:
 <div class="highlight highlight-source-shell"><pre>sudo reboot</pre></div>
-<p>update apt-get and install pip3:</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Update apt-get and install pip3:</p>
 <div class="highlight highlight-source-shell"><pre>sudo apt-get update
 sudo apt-get install python3-pip</pre></div>
-<p>install the following python modules:</p>
+</li>
+<li>
+<p>Install the following python modules:</p>
 <div class="highlight highlight-source-shell"><pre>sudo pip3 install rpi_ws281x adafruit-circuitpython-neopixel
 sudo python3 -m pip install --force-reinstall adafruit-blinka
 sudo pip3 install stupidArtnet</pre></div>
+<p>(And Yes, the libraries need to be installed in the Root-directory, more on that later)</p>
+</li>
+<li>
+<p>Copy the python files from the repo on your pi.<br>
+By either using <strong>??????????</strong><br>
+Or by following <strong>???these???</strong> Instructions.</p>
+</li>
+<li>
+<p>Set the number of pixels.</p>
+<ol>
+<li>Set the number of pixels.</li>
+<li>Set the Artnet Universe number.<br>
+<strong>????????</strong>
+</li>
+</ol>
+</li>
+<li>
+<p>Test the ws2812-Strip:</p>
+<div class="highlight highlight-source-shell"><pre>sudo python3 ws2812.py</pre></div>
+<p>(It is important to run the script with Root-privileges, so that it can access the pwm-function)<br>
+The first LED should light up in red, and the last one in blue, all in between should light up in green.</p>
+<p>Debug:</p>
+<ul>
+<li>If no LEDs lights up, but there is no error message in the shell, check the wiring</li>
+<li>If the LEDs do not light up in the correct colour, but there is no error message in the shell, check the number of LEDs set in step 6 and/or do step 2.</li>
+<li>If you get an error message check the sudo privileges, the number of LEDs set in step 6, and/or do step 2.</li>
+</ul>
+</li>
+<li>
+<p>Check the Artnet-Network:</p>
+<ol>
+<li>
+<p>Setup your DMX software.<br>
+(I used QLC+, for a tutorial how to set up QLC+ go <a href="#qlc-artnet-setup">here</a>)<br>
+If you need the IP-Address of the Raspberry pi use:</p>
+<div class="highlight highlight-source-shell"><pre>hostname -I</pre></div>
+</li>
+<li>
+<p>start the Artnet-test-script:</p>
+<div class="highlight highlight-source-shell"><pre>sudo python3 artnet.py</pre></div>
+<p>(Sudo must be used, because the library is installed in the Root-directory, to later function in combination with the ws2812-module)</p>
+<p>Debug:</p>
+<ul>
+<li><strong>??????</strong></li>
+</ul>
+</li>
+<li>
+<p>stop the script, by pressing any key</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Test the ws2818 over Artnet scipt:</p>
+<div class="highlight highlight-source-shell"><pre>sudo python3 ws2812Artnet.py
+</pre></div>
+<p>stop it with Strg + C (the script will then crash with an error message, which can be ignored)</p>
+</li>
+<li>
+<p>Setup the auto-startup of the script:<br>
+<strong>??????</strong></p>
+</li>
+<li>
+<p>Setup a shutdown button:<br>
+<strong>??????</strong></p>
+</li>
+</ol>
+<h2>
+<a id="user-content-additional-stuff" class="anchor" href="#additional-stuff" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Stuff:</h2>
+<h3>
+<a id="user-content-qlc-artnet-setup" class="anchor" href="#qlc-artnet-setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>QLC+ Artnet Setup:</h3>
+<p><strong>??????</strong></p>
 </article></body></html>
