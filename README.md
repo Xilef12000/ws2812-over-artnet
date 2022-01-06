@@ -15,7 +15,7 @@
 		```
 		blacklist snd_bcm2835
 		```
-		save and exit with Strg + O and Strg + X  
+		save and exit with Ctrl + O and Ctrl + X  
 	3. open the next file:  
 		```bash
 		sudo nano /boot/config.txt
@@ -30,7 +30,7 @@
 		# Enable audio (loads snd_bcm2835)
 		#dtparam=audio=on
 		```
-		save and exit with Strg + O and Strg + X  
+		save and exit with Ctrl + O and Ctrl + X  
 	5. reboot the Raspberry pi using:  
 		```bash
 		sudo reboot
@@ -91,7 +91,7 @@
 	sudo python3 ws2812Artnet.py
 
 	```
-	stop it with Strg + C (the script will then crash with an error message, which can be ignored)  
+	stop it with Ctrl + C (the script will then crash with an error message, which can be ignored)  
 
 10. Setup the auto-startup of the script:  
 	**??????**  
