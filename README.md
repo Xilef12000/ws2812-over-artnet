@@ -2,9 +2,22 @@
 ## ws2812 over artnet with a raspberrypi
 
 ## Setup:
-0. **?????**
+0. Flash your SD-Card for the Raspberry-pi.  
+	I recommend using the [Raspberry Pi Imager](https://www.raspberrypi.com/software/).  
+	You can use the Raspberrypy pi os lite, because there is no need for a gui.  
+	By pressing Crtl + Shift + X you get a options menu, in which you can enable ssh.  
+	(of course you can also use balena etcher, and create a ssh-file)
 1. Connect the ws2812-Strip to the raspberry pi.  
-	**??????**
+	This is a very simple way to connect the ws2821-Strip:    
+	![image](wiring_diagramm_bb.png)
+
+	| ws2821-LED-Strip | Raspberry-pi               |
+	|------------------|----------------------------|
+	| GND              | GND (e.g. pin14)           |
+	| Din              | GPIO 18 (pwm) (i.e. pin12) |
+	| 5V               | +3,3 V (e.g. pin1)         |
+
+	But this method may not work for long strips, for other connection methods see [this article](https://learn.adafruit.com/neopixels-on-raspberry-pi/raspberry-pi-wiring) by Tony DiCola from Adafruit.  
 2. This is an optional step to improve the communication with the ws2812 LED-Strip  
 	(This step is not necessary, and can also be done later)  
 	1. open the file:  

@@ -987,11 +987,39 @@ body .markdown-body {
 <a id="user-content-setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup:</h2>
 <ol start="0">
 <li>
-<p><strong>?????</strong></p>
+<p>Flash your SD-Card for the Raspberry-pi.<br>
+I recommend using the <a href="https://www.raspberrypi.com/software/" rel="nofollow">Raspberry Pi Imager</a>.<br>
+You can use the Raspberrypy pi os lite, because there is no need for a gui.<br>
+By pressing Crtl + Shift + X you get a options menu, in which you can enable ssh.<br>
+(of course you can also use balena etcher, and create a ssh-file)</p>
 </li>
 <li>
 <p>Connect the ws2812-Strip to the raspberry pi.<br>
-<strong>??????</strong></p>
+This is a very simple way to connect the ws2821-Strip:<br>
+<a href="/C:/Users/Manuel/Documents/GitHub/ws2812-over-artnet/wiring_diagramm_bb.png" target="_blank" rel="noopener noreferrer"><img src="/C:/Users/Manuel/Documents/GitHub/ws2812-over-artnet/wiring_diagramm_bb.png" alt="image" style="max-width:100%;"></a></p>
+<table>
+<thead>
+<tr>
+<th>ws2821-LED-Strip</th>
+<th>Raspberry-pi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GND</td>
+<td>GND (e.g. pin14)</td>
+</tr>
+<tr>
+<td>Din</td>
+<td>GPIO 18 (pwm) (i.e. pin12)</td>
+</tr>
+<tr>
+<td>5V</td>
+<td>+3,3 V (e.g. pin1)</td>
+</tr>
+</tbody>
+</table>
+<p>But this method may not work for long strips, for other connection methods see <a href="https://learn.adafruit.com/neopixels-on-raspberry-pi/raspberry-pi-wiring" rel="nofollow">this</a> article by Tony DiCola from Adafruit.</p>
 </li>
 <li>
 <p>This is an optional step to improve the communication with the ws2812 LED-Strip<br>
@@ -1003,7 +1031,7 @@ body .markdown-body {
 <li>and add:
 <pre><code>blacklist snd_bcm2835
 </code></pre>
-save and exit with Strg + O and Strg + X</li>
+save and exit with Ctrl + O and Ctrl + X</li>
 <li>open the next file:
 <div class="highlight highlight-source-shell"><pre>sudo nano /boot/config.txt</pre></div>
 </li>
@@ -1015,7 +1043,7 @@ to:
 <pre><code># Enable audio (loads snd_bcm2835)
 #dtparam=audio=on
 </code></pre>
-save and exit with Strg + O and Strg + X</li>
+save and exit with Ctrl + O and Ctrl + X</li>
 <li>reboot the Raspberry pi using:
 <div class="highlight highlight-source-shell"><pre>sudo reboot</pre></div>
 </li>
@@ -1086,7 +1114,7 @@ If you need the IP-Address of the Raspberry pi use:</p>
 <p>Test the ws2818 over Artnet scipt:</p>
 <div class="highlight highlight-source-shell"><pre>sudo python3 ws2812Artnet.py
 </pre></div>
-<p>stop it with Strg + C (the script will then crash with an error message, which can be ignored)</p>
+<p>stop it with Ctrl + C (the script will then crash with an error message, which can be ignored)</p>
 </li>
 <li>
 <p>Setup the auto-startup of the script:<br>
