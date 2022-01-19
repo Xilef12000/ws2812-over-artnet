@@ -1,6 +1,8 @@
 # ws2812-over-artnet
 ## ws2812 over artnet with a raspberrypi
 
+**Note: The Documentation is unfinished and still in work.**
+
 ## Setup:
 0. Flash your SD-Card for the Raspberry-pi.  
 	I recommend using the [Raspberry Pi Imager](https://www.raspberrypi.com/software/).  
@@ -62,10 +64,12 @@
 	(And Yes, the libraries need to be installed in the Root-directory, more on that later)  
 
 5. Copy the python files from the repo on your pi.  
+	**In work; simply download the repo.**  
 	By either using **??????????**  
 	Or by following **???these???** Instructions.
 
 6. Set the number of pixels.  
+	**In work; set the settings in every file(the variables at the top)**  
 	1. Set the number of pixels.  
 	2. Set the Artnet Universe number.  
 	**????????**  
