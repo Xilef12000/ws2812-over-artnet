@@ -7,7 +7,8 @@
 0. Flash your SD-Card for the Raspberry-pi.  
 	I recommend using the [Raspberry Pi Imager](https://www.raspberrypi.com/software/).  
 	You can use the Raspberrypy pi os lite, because there is no need for a gui.  
-	By pressing Crtl + Shift + X you get a options menu, in which you can enable ssh.  
+	I used the Version "Raspberry Pi OS Lite (32-bit) Debian Bullseye"  
+	By pressing Crtl + Shift + X you get a options menu, in which you can set the host-name and enable ssh.  
 	(of course you can also use balena etcher, and create a ssh-file)
 1. Connect the ws2812-Strip to the raspberry pi.  
 	This is a very simple way to connect the ws2821-Strip:    
