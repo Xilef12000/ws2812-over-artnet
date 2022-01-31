@@ -1033,7 +1033,7 @@ This is a very simple way to connect the ws2821-Strip:<br>
 <li>and add:
 <pre><code>blacklist snd_bcm2835
 </code></pre>
-save and exit with Ctrl + O and Ctrl + X</li>
+save and exit with Ctrl + O and Enter, and the Ctrl + X</li>
 <li>open the next file:
 <div class="highlight highlight-source-shell"><pre>sudo nano /boot/config.txt</pre></div>
 </li>
@@ -1045,7 +1045,7 @@ to:
 <pre><code># Enable audio (loads snd_bcm2835)
 #dtparam=audio=on
 </code></pre>
-save and exit with Ctrl + O and Ctrl + X</li>
+save and exit with Ctrl + O and Enter, and the Ctrl + X</li>
 <li>reboot the Raspberry pi using:
 <div class="highlight highlight-source-shell"><pre>sudo reboot</pre></div>
 </li>
@@ -1056,9 +1056,11 @@ save and exit with Ctrl + O and Ctrl + X</li>
 install the script:</p>
 <ol start="3">
 <li>
-<p>Update apt-get and install pip3:</p>
+<p>Update apt-get and install python3 and pip3:</p>
 <div class="highlight highlight-source-shell"><pre>sudo apt-get update
+sudo apt-get install python3
 sudo apt-get install python3-pip</pre></div>
+<p>confirm if necessary with y (yes)</p>
 </li>
 <li>
 <p>Install the following python modules:</p>
@@ -1068,20 +1070,14 @@ sudo pip3 install stupidArtnet</pre></div>
 <p>(And Yes, the libraries need to be installed in the Root-directory, more on that later)</p>
 </li>
 <li>
-<p>Copy the python files from the repo on your pi.<br>
-<strong>In work; simply download the repo.</strong><br>
-By either using <strong>??????????</strong><br>
-Or by following <strong>???these???</strong> Instructions.</p>
+<p>Copy the python files from the repo on your pi.</p>
 </li>
 <li>
-<p>Set the number of pixels.<br>
-<strong>In work; set the settings in every file(the variables at the top)</strong></p>
-<ol>
-<li>Set the number of pixels.</li>
-<li>Set the Artnet Universe number.<br>
-<strong>????????</strong>
-</li>
-</ol>
+<p>Change the settings:<br>
+open the config.json file:</p>
+<div class="highlight highlight-source-shell"><pre>nano config.json</pre></div>
+<p>and set the desired Artnet Universe Id (artnet starts counting from 0)<br>
+As well as the number of pixels used.</p>
 </li>
 <li>
 <p>Test the ws2812-Strip:</p>
@@ -1108,10 +1104,6 @@ If you need the IP-Address of the Raspberry pi use:</p>
 <p>start the Artnet-test-script:</p>
 <div class="highlight highlight-source-shell"><pre>sudo python3 artnet.py</pre></div>
 <p>(Sudo must be used, because the library is installed in the Root-directory, to later function in combination with the ws2812-module)</p>
-<p>Debug:</p>
-<ul>
-<li><strong>??????</strong></li>
-</ul>
 </li>
 <li>
 <p>stop the script, by pressing any key</p>
@@ -1126,16 +1118,16 @@ If you need the IP-Address of the Raspberry pi use:</p>
 </li>
 <li>
 <p>Setup the auto-startup of the script:<br>
-<strong>??????</strong></p>
+will follow</p>
 </li>
 <li>
 <p>Setup a shutdown button:<br>
-<strong>??????</strong></p>
+will follow</p>
 </li>
 </ol>
 <h2>
 <a id="user-content-additional-stuff" class="anchor" href="#additional-stuff" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Stuff:</h2>
 <h3>
 <a id="user-content-qlc-artnet-setup" class="anchor" href="#qlc-artnet-setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>QLC+ Artnet Setup:</h3>
-<p><strong>??????</strong></p>
+<p>will follow</p>
 </article></body></html>

@@ -31,7 +31,7 @@
 		```
 		blacklist snd_bcm2835
 		```
-		save and exit with Ctrl + O and Ctrl + X  
+		save and exit with Ctrl + O and Enter, and the Ctrl + X  
 	3. open the next file:  
 		```bash
 		sudo nano /boot/config.txt
@@ -46,7 +46,7 @@
 		# Enable audio (loads snd_bcm2835)
 		#dtparam=audio=on
 		```
-		save and exit with Ctrl + O and Ctrl + X  
+		save and exit with Ctrl + O and Enter, and the Ctrl + X  
 	5. reboot the Raspberry pi using:  
 		```bash
 		sudo reboot
@@ -63,11 +63,13 @@
 	```
 	
 
-3. Update apt-get and install pip3:  
+3. Update apt-get and install python3 and pip3:  
 	```bash
 	sudo apt-get update
+	sudo apt-get install python3
 	sudo apt-get install python3-pip
 	```
+	confirm if necessary with y (yes)  
 4. Install the following python modules:  
 	```bash
 	sudo pip3 install rpi_ws281x adafruit-circuitpython-neopixel
@@ -77,15 +79,14 @@
 	(And Yes, the libraries need to be installed in the Root-directory, more on that later)  
 
 5. Copy the python files from the repo on your pi.  
-	**In work; simply download the repo.**  
-	By either using **??????????**  
-	Or by following **???these???** Instructions.
 
-6. Set the number of pixels.  
-	**In work; set the settings in every file(the variables at the top)**  
-	1. Set the number of pixels.  
-	2. Set the Artnet Universe number.  
-	**????????**  
+6. Change the settings:  
+	open the config.json file:  
+	```bash
+	nano config.json
+	```
+	and set the desired Artnet Universe Id (artnet starts counting from 0)  
+	As well as the number of pixels used.  
 
 7. Test the ws2812-Strip:
 	```bash
@@ -112,11 +113,9 @@
 		```
 		(Sudo must be used, because the library is installed in the Root-directory, to later function in combination with the ws2812-module)  
 
-		Debug:  
-		- **??????**  
 	3. stop the script, by pressing any key  
 
-9. Test the ws2818 over Artnet scipt:  
+9. Test the ws2818 over Artnet script:  
 	```bash
 	sudo python3 ws2812Artnet.py
 
@@ -124,12 +123,12 @@
 	stop it with Ctrl + C (the script will then crash with an error message, which can be ignored)  
 
 10. Setup the auto-startup of the script:  
-	**??????**  
+	will follow  
 
 11. Setup a shutdown button:  
-	**??????**  
+	will follow  
 
 
 ## Additional Stuff:
 ### QLC+ Artnet Setup:
-**??????**
+will follow  

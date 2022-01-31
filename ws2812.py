@@ -1,10 +1,11 @@
 import board
 import neopixel
-
 import json
-data = json.load(open('C:\\Users\\Manuel\\Documents\\GitHub\\ws2812-over-artnet\\config.json'))
-universe = data["universe"]
-pixelCount = data["pixels"]
+import os
+
+dirname = os.path.dirname(__file__)
+data = json.load(open(os.path.join(dirname, 'config.json')))
+pixelCount = data["settings"]["pixels"]
 
 #pixelCount = 30
 pixels = neopixel.NeoPixel(board.D18, pixelCount)

@@ -1,8 +1,8 @@
 {
-	"version":"-0.0",
+	"version":"1.0",
 	"ignoreUpdates":false,
 	"settings":{
-		"universe":1,
+		"universe":0,
 		"pixels":30
 	}
 }

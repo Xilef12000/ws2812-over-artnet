@@ -1,7 +1,9 @@
 import json
 import urllib.request
+import os
 
-data = json.load(open('C:\\Users\\Manuel\\Documents\\GitHub\\ws2812-over-artnet\\config.json'))
+dirname = os.path.dirname(__file__)
+data = json.load(open(os.path.join(dirname, 'config.json')))
 #print(data["version"])
 if (data["ignoreUpdates"] == False):
     request_url = urllib.request.urlopen('https://xilef12000.github.io/versions.json')
