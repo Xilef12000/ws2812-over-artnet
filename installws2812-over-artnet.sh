@@ -18,17 +18,17 @@ echo installing unzip
 sudo apt-get unzip
 
 echo downloading repo
-wget https://github.com/Xilef12000/ws2812-over-artnet/archive/refs/tags/v1.0.zip
+wget https://github.com/Xilef12000/ws2812-over-artnet/archive/refs/tags/v1.1.zip
 
 echo unzipping
-unzip v1.0.zip
+unzip v1.1.zip
 
 echo cleanup
-cd ws2812-over-artnet-1.0
+cd ws2812-over-artnet-1.1
 mv * ../
 rm .gitignore
 cd ../
-rmdir ws2812-over-artnet-1.0
-rm v1.0.zip
+rmdir ws2812-over-artnet-1.1
+rm v1.1.zip
 
 echo installation complete
