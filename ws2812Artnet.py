@@ -2,10 +2,16 @@ import time
 import board
 import neopixel
 from stupidArtnet import StupidArtnetServer
-pixelCount = 30
+
+import json
+data = json.load(open('C:\\Users\\Manuel\\Documents\\GitHub\\ws2812-over-artnet\\config.json'))
+universe = data["universe"]
+pixelCount = data["pixels"]
+
+#pixelCount = 30
 pixels = neopixel.NeoPixel(board.D18, pixelCount)
 
-universe = 1
+#universe = 1
 server = StupidArtnetServer()
 u1_listener = server.register_listener(universe)
 while True:
