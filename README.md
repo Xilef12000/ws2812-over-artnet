@@ -52,43 +52,26 @@
 		sudo reboot
 		```
 
-**The Steps 3 to 5 can be skipped if using the following script:**  
-	install the script:  
+3. Installing ws-2812-over-artnet  
+	download the script:  
 	```bash
 	wget https://xilef12000.github.io/demo/ws2812-over-artnet/installws2812-over-artnet.sh
 	```
-	and run it with sudo privileges:
+	make the file executable and run it with sudo privileges:  
 	```bash
+	chmod u+x installws2812-over-artnet.sh
 	sudo ./installws2812-over-artnet.sh
 	```
-	
-
-3. Update apt-get and install python3 and pip3:  
-	```bash
-	sudo apt-get update
-	sudo apt-get install python3
-	sudo apt-get install python3-pip
-	```
-	confirm if necessary with y (yes)  
-4. Install the following python modules:  
-	```bash
-	sudo pip3 install rpi_ws281x adafruit-circuitpython-neopixel
-	sudo python3 -m pip install --force-reinstall adafruit-blinka
-	sudo pip3 install stupidArtnet
-	```
-	(And Yes, the libraries need to be installed in the Root-directory, more on that later)  
-
-5. Copy the python files from the repo on your pi.  
-
-6. Change the settings:  
+	(for a manual installation go [here](#manual-installation))  
+4. Change the settings:  
 	open the config.json file:  
 	```bash
-	nano config.json
+	sudo nano config.json
 	```
 	and set the desired Artnet Universe Id (artnet starts counting from 0)  
 	As well as the number of pixels used.  
 
-7. Test the ws2812-Strip:
+5. Test the ws2812-Strip:
 	```bash
 	sudo python3 ws2812.py
 	```
@@ -100,7 +83,7 @@
 	- If the LEDs do not light up in the correct colour, but there is no error message in the shell, check the number of LEDs set in step 6 and/or do step 2.  
 	- If you get an error message check the sudo privileges, the number of LEDs set in step 6, and/or do step 2.  
 
-8. Check the Artnet-Network:
+6. Check the Artnet-Network:
 	1. Setup your DMX software.  
 		(I used QLC+, for a tutorial how to set up QLC+ go [here](#qlc-artnet-setup))  
 		If you need the IP-Address of the Raspberry pi use:
@@ -115,20 +98,36 @@
 
 	3. stop the script, by pressing any key  
 
-9. Test the ws2818 over Artnet script:  
+7. Test the ws2818 over Artnet script:  
 	```bash
 	sudo python3 ws2812Artnet.py
 
 	```
 	stop it with Ctrl + C (the script will then crash with an error message, which can be ignored)  
 
-10. Setup the auto-startup of the script:  
+8. Setup the auto-startup of the script:  
 	will follow  
 
-11. Setup a shutdown button:  
+9. Setup a shutdown button:  
 	will follow  
 
 
 ## Additional Stuff:
 ### QLC+ Artnet Setup:
 will follow  
+### manual installation:
+1. Update apt-get and install python3 and pip3:  
+	```bash
+	sudo apt-get update
+	sudo apt-get install python3
+	sudo apt-get install python3-pip
+	```
+	confirm if necessary with y (yes)  
+2. Install the following python modules:  
+	```bash
+	sudo pip3 install rpi_ws281x adafruit-circuitpython-neopixel
+	sudo python3 -m pip install --force-reinstall adafruit-blinka
+	sudo pip3 install stupidArtnet
+	```
+	(And Yes, the libraries need to be installed in the Root-directory, more on that later)  
+3. Copy the python files from the repo on your pi.  
