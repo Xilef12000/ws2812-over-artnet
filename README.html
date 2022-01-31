@@ -1052,26 +1052,18 @@ save and exit with Ctrl + O and Enter, and the Ctrl + X</li>
 </ol>
 </li>
 <li>
-<p>Update apt-get and install python3 and pip3:</p>
-<div class="highlight highlight-source-shell"><pre>sudo apt-get update
-sudo apt-get install python3
-sudo apt-get install python3-pip</pre></div>
-<p>confirm if necessary with y (yes)</p>
-</li>
-<li>
-<p>Install the following python modules:</p>
-<div class="highlight highlight-source-shell"><pre>sudo pip3 install rpi_ws281x adafruit-circuitpython-neopixel
-sudo python3 -m pip install --force-reinstall adafruit-blinka
-sudo pip3 install stupidArtnet</pre></div>
-<p>(And Yes, the libraries need to be installed in the Root-directory, more on that later)</p>
-</li>
-<li>
-<p>Copy the python files from the repo on your pi.</p>
+<p>Installing ws-2812-over-artnet<br>
+download the script:</p>
+<div class="highlight highlight-source-shell"><pre>wget https://xilef12000.github.io/demo/ws2812-over-artnet/installws2812-over-artnet.sh</pre></div>
+<p>make the file executable and run it with sudo privileges:</p>
+<div class="highlight highlight-source-shell"><pre>chmod u+x installws2812-over-artnet.sh
+sudo ./installws2812-over-artnet.sh</pre></div>
+<p>(for a manual installation go <a href="#manual-installation">here</a>)</p>
 </li>
 <li>
 <p>Change the settings:<br>
 open the config.json file:</p>
-<div class="highlight highlight-source-shell"><pre>nano config.json</pre></div>
+<div class="highlight highlight-source-shell"><pre>sudo nano config.json</pre></div>
 <p>and set the desired Artnet Universe Id (artnet starts counting from 0)<br>
 As well as the number of pixels used.</p>
 </li>
@@ -1107,7 +1099,7 @@ If you need the IP-Address of the Raspberry pi use:</p>
 </ol>
 </li>
 <li>
-<p>Test the ws2818 over Artnet scipt:</p>
+<p>Test the ws2818 over Artnet script:</p>
 <div class="highlight highlight-source-shell"><pre>sudo python3 ws2812Artnet.py
 </pre></div>
 <p>stop it with Ctrl + C (the script will then crash with an error message, which can be ignored)</p>
@@ -1126,4 +1118,19 @@ will follow</p>
 <h3>
 <a id="user-content-qlc-artnet-setup" class="anchor" href="#qlc-artnet-setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>QLC+ Artnet Setup:</h3>
 <p>will follow</p>
+<h3>
+<a id="user-content-manual-installation" class="anchor" href="#manual-installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>manual installation:</h3>
+<ol>
+<li>Update apt-get and install python3 and pip3:
+<div class="highlight highlight-source-shell"><pre>sudo apt-get update
+sudo apt-get install python3
+sudo apt-get install python3-pip</pre></div>
+confirm if necessary with y (yes)</li>
+<li>Install the following python modules:
+<div class="highlight highlight-source-shell"><pre>sudo pip3 install rpi_ws281x adafruit-circuitpython-neopixel
+sudo python3 -m pip install --force-reinstall adafruit-blinka
+sudo pip3 install stupidArtnet</pre></div>
+(And Yes, the libraries need to be installed in the Root-directory, more on that later)</li>
+<li>Copy the python files from the repo on your pi.</li>
+</ol>
 </article></body></html>
