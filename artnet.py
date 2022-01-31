@@ -1,7 +1,9 @@
 from stupidArtnet import StupidArtnetServer
-
 import json
-data = json.load(open('C:\\Users\\Manuel\\Documents\\GitHub\\ws2812-over-artnet\\config.json'))
+import os
+
+dirname = os.path.dirname(__file__)
+data = json.load(open(os.path.join(dirname, 'config.json')))
 universe = data["universe"]
 
 def test_callback(data):
