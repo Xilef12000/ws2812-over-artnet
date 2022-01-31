@@ -51,6 +51,18 @@
 		```bash
 		sudo reboot
 		```
+
+**The Steps 3 to 5 can be skipped if using the following script:**  
+	install the script:  
+	```bash
+	wget https://xilef12000.github.io/demo/ws2812-over-artnet/installws2812-over-artnet.sh
+	```
+	and run it with sudo privileges:
+	```bash
+	sudo ./installws2812-over-artnet.sh
+	```
+	
+
 3. Update apt-get and install pip3:  
 	```bash
 	sudo apt-get update
