@@ -7,8 +7,8 @@ import os
 
 dirname = os.path.dirname(__file__)
 data = json.load(open(os.path.join(dirname, 'config.json')))
-universe = data["universe"]
-pixelCount = data["pixels"]
+universe = data["settings"]["universe"]
+pixelCount = data["settings"]["pixels"]
 
 #pixelCount = 30
 pixels = neopixel.NeoPixel(board.D18, pixelCount)

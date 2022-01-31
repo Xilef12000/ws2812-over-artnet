@@ -4,7 +4,7 @@ import os
 
 dirname = os.path.dirname(__file__)
 data = json.load(open(os.path.join(dirname, 'config.json')))
-universe = data["universe"]
+universe = data["settings"]["universe"]
 
 def test_callback(data):
 	print(data)
