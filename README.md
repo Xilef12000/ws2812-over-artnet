@@ -55,7 +55,7 @@
 3. Installing ws-2812-over-artnet  
 	download the script:  
 	```bash
-	wget https://xilef12000.github.io/demo/ws2812-over-artnet/installws2812-over-artnet.sh
+	Needs to be updated
 	```
 	make the file executable and run it with sudo privileges:  
 	```bash
